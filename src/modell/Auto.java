@@ -5,9 +5,9 @@ public class Auto extends Jarmu{
     
     private boolean defekt;
 
-    public Auto(boolean defekt, boolean beinditva, boolean uzemanyag, boolean megerkezett, boolean halad) {
-        super(beinditva, uzemanyag, megerkezett, halad);
-        this.defekt = defekt;
+    public Auto() {
+        super();
+        defekt = false;
     }
 
     public void kereketCserel() {
@@ -17,12 +17,13 @@ public class Auto extends Jarmu{
         }
     }
     
+    @Override
     public boolean halad() {
-        if (isUzemanyag() == true && isMegerkezett() == false) {
-            return true;
-        } 
-        return false;
+        boolean siker = false;
+        if (this.isBeinditva() && this.isUzemanyag() ) {
+            siker = true;
+        }
+        return siker; 
     }
-    
-    
+       
 }
