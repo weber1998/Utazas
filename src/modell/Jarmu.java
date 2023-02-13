@@ -21,16 +21,51 @@ public abstract class Jarmu {
     }
     
     public void beindit() {
-        
+        if (beinditva == false) {
+            beinditva = true;
+        }
     }
     
     public void leallit() {
-        
+        if (beinditva == true) {
+            beinditva = false;
+        }
     }
     
     public boolean tankol() {
-        return false;
+        if (isUzemanyag() == false && isMegerkezett() == true && isBeinditva() == false) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
+    public boolean isBeinditva() {
+        return beinditva;
+    }
+
+    public boolean isUzemanyag() {
+        return uzemanyag;
+    }
+
+    public boolean isMegerkezett() {
+        return megerkezett;
+    }
+
+    public void setBeinditva(boolean beinditva) {
+        this.beinditva = beinditva;
+    }
+
+    public void setUzemanyag(boolean uzemanyag) {
+        this.uzemanyag = uzemanyag;
+    }
+
+    public void setMegerkezett(boolean megerkezett) {
+        this.megerkezett = megerkezett;
+    }
+
+    
+    
     
     public boolean halad;
 }
